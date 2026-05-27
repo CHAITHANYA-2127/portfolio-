@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G.Chaithanya Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #08121f;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        .top-bar {
+            width: 100%;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: #08121fd9;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .brand-logo {
+            font-size: 32px;
+            font-weight: 700;
+            color: #00d2ff;
+        }
+
+        .menu-links {
+            display: flex;
+            gap: 35px;
+        }
+
+        .menu-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            position: relative;
+        }
+
+        .menu-links a::after {
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #00d2ff;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.4s;
+        }
+
+        .menu-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .intro-zone {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 8%;
+            gap: 50px;
+        }
+
+        .left-intro {
+            flex: 1;
+            animation: slideLeft 1s ease;
+        }
+
+        .small-text {
+            color: #00d2ff;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .left-intro h1 {
+            font-size: 65px;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .left-intro span {
+            color: #00d2ff;
+        }
+
+        .intro-description {
+            color: #c5d3e0;
+            line-height: 1.9;
+            max-width: 550px;
+            margin-bottom: 35px;
+            font-size: 17px;
+        }
+
+        .button-area {
+            display: flex;
+            gap: 20px;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            padding: 14px 34px;
+            border: none;
+            border-radius: 40px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        .primary-btn {
+            background: #00d2ff;
+            color: #08121f;
+            font-weight: 600;
+            box-shadow: 0 0 20px #00d2ff70;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-5px);
+        }
+
+        .secondary-btn {
+            background: transparent;
+            border: 1px solid #00d2ff;
+            color: white;
+        }
+
+        .secondary-btn:hover {
+            background: #00d2ff;
+            color: #08121f;
+        }
+
+        /* Right Image */
+        .right-intro {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            animation: slideRight 1s ease;
+        }
+
+        .circle-bg {
+            width: 420px;
+            height: 420px;
+            background: #00d2ff25;
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(25px);
+        }
+
+        .right-intro img {
+            width: 370px;
+            height: 480px;
+            object-fit: cover;
+            border-radius: 30px;
+            position: relative;
+            z-index: 2;
+            border: 4px solid #00d2ff;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            transition: 0.5s;
+        }
+
+        .right-intro img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Cards */
+        .floating-section {
+            width: 100%;
+            padding: 40px 8%;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .float-card {
+            width: 320px;
+            padding: 35px;
+            background: #112033;
+            border-radius: 25px;
+            transition: 0.4s;
+            border: 1px solid #1f3852;
+        }
+
+        .float-card:hover {
+            transform: translateY(-12px);
+            background: #162b42;
+        }
+
+        .float-card h2 {
+            color: #00d2ff;
+            margin-bottom: 15px;
+        }
+
+        .float-card p {
+            color: #c5d3e0;
+            line-height: 1.8;
+        }
+
+        /* About */
+        .about-zone {
+            width: 100%;
+            padding: 100px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 30px;
+            border: 3px solid #00d2ff;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .section-title {
+            color: #00d2ff;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .about-content h2 {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .about-text {
+            color: #c5d3e0;
+            line-height: 1.9;
+            margin-bottom: 35px;
+        }
+
+        /* Skills */
+        .skill-item {
+            margin-bottom: 25px;
+        }
+
+        .skill-item span {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .skill-line {
+            width: 100%;
+            height: 10px;
+            border-radius: 30px;
+            background: #1e344d;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-line::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            border-radius: 30px;
+        }
+
+        .html-line::before {
+            width: 95%;
+            background: #00d2ff;
+        }
+
+        .css-line::before {
+            width: 90%;
+            background: #00d2ff;
+        }
+
+        .js-line::before {
+            width: 75%;
+            background: #00d2ff;
+        }
+
+        /* Projects */
+        .project-zone {
+            width: 100%;
+            padding: 100px 8%;
+            text-align: center;
+        }
+
+        .project-heading {
+            font-size: 45px;
+            margin-bottom: 50px;
+        }
+
+        .project-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .project-card {
+            width: 330px;
+            padding: 40px;
+            background: #112033;
+            border-radius: 25px;
+            transition: 0.4s;
+            border: 1px solid #1f3852;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        .project-card h3 {
+            margin-bottom: 15px;
+            color: #00d2ff;
+        }
+
+        .project-card p {
+            color: #c5d3e0;
+            line-height: 1.8;
+        }
+
+        /* Contact */
+        .contact-zone {
+            width: 100%;
+            padding: 100px 8%;
+            text-align: center;
+        }
+
+        .contact-zone h2 {
+            font-size: 50px;
+            margin-bottom: 25px;
+        }
+
+        .contact-btn {
+            padding: 15px 35px;
+            border: none;
+            border-radius: 40px;
+            background: #00d2ff;
+            color: #08121f;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.4s;
+            box-shadow: 0 0 20px #00d2ff70;
+        }
+
+.contact-btn:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            width: 100%;
+            padding: 30px;
+            text-align: center;
+            background: #050d16;
+            color: #90a7bb;
+        }
+
+        /* Animations */
+        @keyframes slideLeft {
+            from {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideRight {
+            from {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive */
+        @media(max-width:1000px) {
+            .intro-zone,
+            .about-zone {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .button-area {
+                justify-content: center;
+            }
+
+            .left-intro h1 {
+                font-size: 48px;
+            }
+
+            .about-content h2,
+            .project-heading,
+            .contact-zone h2 {
+                font-size: 38px;
+            }
+        }
+
+        @media(max-width:700px) {
+            .menu-links {
+                display: none;
+            }
+
+            .left-intro h1 {
+                font-size: 38px;
+            }
+
+            .right-intro img {
+                width: 280px;
+                height: 380px;
+            }
+
+            .circle-bg {
+                width: 300px;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="top-bar">
+        <div class="brand-logo">
+            G.Chaithanya
+        </div>
+        <nav class="menu-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Skills</a>
+            <a href="#">Projects</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="intro-zone">
+        <div class="left-intro">
+            <p class="small-text">
+                B.TECH 2ND YEAR STUDENT
+            </p>
+            <h1>
+                Hi, I'm <span>Chaithanya</span><br>
+                Passionate About Web Development
+            </h1>
+            <p class="intro-description">
+                I am Chaithanya, currently pursuing B.Tech 2nd Year at NBKRIST.
+                I enjoy creating modern and responsive websites using HTML and CSS.
+            </p>
+            <div class="button-area">
+                <button class="primary-btn">Explore Work</button>
+                <button class="secondary-btn">Hire Me</button>
+            </div>
+        </div>
+
+        <div class="right-intro">
+            <div class="circle-bg">
+</div>
+       <img src="photo.jpg">
+        </div>
+    </section>
+
+    <!-- Services Cards -->
+    <section class="floating-section">
+        <div class="float-card">
+            <h2>Creative Design</h2>
+            <p>Designing attractive layouts with modern UI concepts and smooth structure.</p>
+        </div>
+        <div class="float-card">
+            <h2>Responsive Websites</h2>
+            <p>Creating websites that work perfectly on mobile, tablet and desktop screens.</p>
+        </div>
+        <div class="float-card">
+            <h2>Frontend Learning</h2>
+            <p>Exploring frontend technologies and improving creative web development skills.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-zone">
+        <div class="about-image">
+<img src="photo.jpg">
+</div>
+        <div class="about-content">
+            <p class="section-title">ABOUT ME</p>
+            <h2>Learning and Building Creative Web Projects</h2>
+            <p class="about-text">
+                I am a B.Tech student from NBKRIST with strong interest in
+                frontend development and creative UI design. I love exploring
+                new technologies and building user-friendly web pages.
+            </p>
+            <div class="skill-item">
+                <span>HTML</span>
+                <div class="skill-line html-line"></div>
+            </div>
+            <div class="skill-item">
+                <span>CSS</span>
+                <div class="skill-line css-line"></div>
+            </div>
+            <div class="skill-item">
+                <span>JavaScript</span>
+                <div class="skill-line js-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="project-zone">
+        <p class="section-title">PROJECTS</p>
+        <h2 class="project-heading">My Creative Works</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <p>A responsive portfolio website with modern UI and clean design.</p>
+            </div>
+            <div class="project-card">
+                <h3>Landing Page</h3>
+                <p>Creative landing page project developed using HTML and CSS.</p>
+            </div>
+            <div class="project-card">
+                <h3>Student Dashboard</h3>
+                <p>A simple dashboard interface designed for academic management.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-zone">
+        <h2>Let's Create Something Beautiful Together</h2>
+        <button class="contact-btn">Contact Me</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 G.Chaithanya | Designed for CodSoft Internship</p>
+    </footer>
+
+</body>
+</html>
