@@ -355,7 +355,28 @@
             margin-bottom: 25px;
         }
 
+        .contact-details {
+            margin-top: 30px;
+            line-height: 2.5;
+        }
+
+        .contact-details p {
+            font-size: 20px;
+            color: #c5d3e0;
+        }
+
+        .contact-details a {
+            color: #00d2ff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .contact-details a:hover {
+            color: white;
+        }
+
         .contact-btn {
+            margin-top: 30px;
             padding: 15px 35px;
             border: none;
             border-radius: 40px;
@@ -367,7 +388,7 @@
             box-shadow: 0 0 20px #00d2ff70;
         }
 
-.contact-btn:hover {
+        .contact-btn:hover {
             transform: translateY(-5px);
         }
 
@@ -386,6 +407,7 @@
                 transform: translateX(-100px);
                 opacity: 0;
             }
+
             to {
                 transform: translateX(0);
                 opacity: 1;
@@ -397,6 +419,7 @@
                 transform: translateX(100px);
                 opacity: 0;
             }
+
             to {
                 transform: translateX(0);
                 opacity: 1;
@@ -405,6 +428,7 @@
 
         /* Responsive */
         @media(max-width:1000px) {
+
             .intro-zone,
             .about-zone {
                 flex-direction: column;
@@ -455,29 +479,34 @@
         <div class="brand-logo">
             G.Chaithanya
         </div>
+
         <nav class="menu-links">
             <a href="#">Home</a>
             <a href="#">About</a>
             <a href="#">Skills</a>
             <a href="#">Projects</a>
-            <a href="#">Contact</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="intro-zone">
+
         <div class="left-intro">
             <p class="small-text">
                 B.TECH 2ND YEAR STUDENT
             </p>
+
             <h1>
                 Hi, I'm <span>Chaithanya</span><br>
                 Passionate About Web Development
             </h1>
+
             <p class="intro-description">
                 I am Chaithanya, currently pursuing B.Tech 2nd Year at NBKRIST.
                 I enjoy creating modern and responsive websites using HTML and CSS.
             </p>
+
             <div class="button-area">
                 <button class="primary-btn">Explore Work</button>
                 <button class="secondary-btn">Hire Me</button>
@@ -485,80 +514,145 @@
         </div>
 
         <div class="right-intro">
-            <div class="circle-bg">
-</div>
-       <img src="photo.jpg">
+            <div class="circle-bg"></div>
+
+            <img src="https://i.ibb.co/cKphcFbK/PHOTO.jpg" alt="PHOTO">
         </div>
+
     </section>
 
     <!-- Services Cards -->
     <section class="floating-section">
+
         <div class="float-card">
             <h2>Creative Design</h2>
-            <p>Designing attractive layouts with modern UI concepts and smooth structure.</p>
+            <p>
+                Designing attractive layouts with modern UI concepts and smooth structure.
+            </p>
         </div>
+
         <div class="float-card">
             <h2>Responsive Websites</h2>
-            <p>Creating websites that work perfectly on mobile, tablet and desktop screens.</p>
+            <p>
+                Creating websites that work perfectly on mobile, tablet and desktop screens.
+            </p>
         </div>
+
         <div class="float-card">
             <h2>Frontend Learning</h2>
-            <p>Exploring frontend technologies and improving creative web development skills.</p>
+            <p>
+                Exploring frontend technologies and improving creative web development skills.
+            </p>
         </div>
+
     </section>
 
     <!-- About Section -->
     <section class="about-zone">
+
         <div class="about-image">
-<img src="photo.jpg">
-</div>
+            <img src="https://i.ibb.co/cKphcFbK/PHOTO.jpg" alt="PHOTO">
+        </div>
+
         <div class="about-content">
+
             <p class="section-title">ABOUT ME</p>
+
             <h2>Learning and Building Creative Web Projects</h2>
+
             <p class="about-text">
                 I am a B.Tech student from NBKRIST with strong interest in
                 frontend development and creative UI design. I love exploring
                 new technologies and building user-friendly web pages.
             </p>
+
             <div class="skill-item">
                 <span>HTML</span>
                 <div class="skill-line html-line"></div>
             </div>
+
             <div class="skill-item">
                 <span>CSS</span>
                 <div class="skill-line css-line"></div>
             </div>
+
             <div class="skill-item">
                 <span>JavaScript</span>
                 <div class="skill-line js-line"></div>
             </div>
+
         </div>
+
     </section>
 
     <!-- Projects -->
     <section class="project-zone">
+
         <p class="section-title">PROJECTS</p>
+
         <h2 class="project-heading">My Creative Works</h2>
+
         <div class="project-grid">
+
             <div class="project-card">
                 <h3>Portfolio Website</h3>
-                <p>A responsive portfolio website with modern UI and clean design.</p>
+                <p>
+                    A responsive portfolio website with modern UI and clean design.
+                </p>
             </div>
+
             <div class="project-card">
                 <h3>Landing Page</h3>
-                <p>Creative landing page project developed using HTML and CSS.</p>
+                <p>
+                    Creative landing page project developed using HTML and CSS.
+                </p>
             </div>
+
             <div class="project-card">
                 <h3>Student Dashboard</h3>
-                <p>A simple dashboard interface designed for academic management.</p>
+                <p>
+                    A simple dashboard interface designed for academic management.
+                </p>
             </div>
+
         </div>
+
     </section>
 
     <!-- Contact -->
-    <section class="contact-zone">
+    <section class="contact-zone" id="contact">
+
         <h2>Let's Create Something Beautiful Together</h2>
-        <button class="contact-btn">Contact Me</button>
+
+        <div class="contact-details">
+
+            <p>
+                📞
+                <a href="tel:9908269700">
+                    9908269700
+                </a>
+            </p>
+
+            <p>
+                💬
+                <a href="https://wa.me/919908269700" target="_blank">
+                    WhatsApp
+                </a>
+            </p>
+
+            <p>
+                🔗
+                <a href= "https://www.linkedin.com/in/chaithanya-gunukula-b83723306/ "target="_blank">
+                    LinkedIn
+                </a>
+            </p>
+
+        </div>
+
+        <button class="contact-btn">
+            Contact Me
+        </button>
+
     </section>
 
     <!-- Footer -->
@@ -567,4 +661,5 @@
     </footer>
 
 </body>
+
 </html>
